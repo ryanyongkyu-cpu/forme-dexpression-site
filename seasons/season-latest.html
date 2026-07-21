@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Forme d'Expression — Spring Summer 26</title>
-<link rel="stylesheet" href="../style.css?v=15">
+<link rel="stylesheet" href="../style.css?v=16">
 </head>
 <body>
 
@@ -54,9 +54,30 @@
   <a href="#" class="film-modal-backdrop" aria-label="Close film"></a>
   <div class="film-modal-content">
     <a href="#" class="film-modal-close">Close ✕</a>
-    <video autoplay muted loop playsinline preload="auto">
-      <source src="../videos/intro.mp4" type="video/mp4">
-    </video>
+    <div class="film-video-wrap">
+      <video autoplay muted loop playsinline preload="auto">
+        <source src="../videos/intro.mp4" type="video/mp4">
+      </video>
+
+      <button type="button" class="film-control film-mute is-muted" aria-label="Toggle sound">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9v6h4l5 5V4L7 9H3z" fill="currentColor" stroke="none"/>
+          <g class="waves">
+            <path d="M16 8.5a5 5 0 0 1 0 7"/>
+            <path d="M18.5 6a8.5 8.5 0 0 1 0 12"/>
+          </g>
+          <g class="mute-line">
+            <path d="M16 9l5 6M21 9l-5 6"/>
+          </g>
+        </svg>
+      </button>
+
+      <button type="button" class="film-control film-fullscreen" aria-label="View full screen">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="4" y="6" width="16" height="12" rx="1"/>
+        </svg>
+      </button>
+    </div>
     <div class="film-credits">
       <p>Directed and filmed by Johan Sandberg</p>
       <p>DOP Olof Osterlind</p>
@@ -66,6 +87,27 @@
     </div>
   </div>
 </div>
+
+<script>
+  (function () {
+    var wrap = document.querySelector('.film-video-wrap');
+    if (!wrap) return;
+    var video = wrap.querySelector('video');
+    var muteBtn = wrap.querySelector('.film-mute');
+    var fsBtn = wrap.querySelector('.film-fullscreen');
+
+    muteBtn.addEventListener('click', function () {
+      video.muted = !video.muted;
+      muteBtn.classList.toggle('is-muted', video.muted);
+    });
+
+    fsBtn.addEventListener('click', function () {
+      if (video.requestFullscreen) video.requestFullscreen();
+      else if (video.webkitRequestFullscreen) video.webkitRequestFullscreen();
+      else if (video.webkitEnterFullscreen) video.webkitEnterFullscreen();
+    });
+  })();
+</script>
 
 </body>
 </html>

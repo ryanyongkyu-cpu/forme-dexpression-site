@@ -451,6 +451,59 @@ a {
   display: block;
 }
 
+.film-video-wrap {
+  position: relative;
+}
+
+.film-control {
+  position: absolute;
+  bottom: 14px;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.film-control:hover {
+  background: rgba(0, 0, 0, 0.68);
+}
+
+.film-control svg {
+  width: 16px;
+  height: 16px;
+}
+
+.film-mute {
+  left: 14px;
+}
+
+.film-fullscreen {
+  right: 14px;
+}
+
+.film-mute .waves {
+  display: block;
+}
+
+.film-mute .mute-line {
+  display: none;
+}
+
+.film-mute.is-muted .waves {
+  display: none;
+}
+
+.film-mute.is-muted .mute-line {
+  display: block;
+}
+
 .film-modal-close {
   display: block;
   text-align: right;
