@@ -50,6 +50,7 @@ a {
   position: absolute;
   left: 40px;
   display: flex;
+  align-items: center;
   gap: 36px;
 }
 
@@ -68,6 +69,54 @@ a {
 .site-nav .nav-links a.active {
   border-bottom: 1px solid var(--ink);
   padding-bottom: 2px;
+}
+
+.nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: var(--nav-height);
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-top: none;
+  box-shadow: 0 12px 24px rgba(20, 15, 8, 0.08);
+  padding: 14px 0;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  z-index: 200;
+}
+
+.nav-item:hover .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-dropdown a {
+  display: block;
+  padding: 10px 22px;
+  font-size: 12.5px;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.nav-dropdown a.latest {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 14px;
+  margin-bottom: 6px;
+  color: var(--muted);
 }
 
 .site-nav .logo {
@@ -119,6 +168,22 @@ a {
     radial-gradient(ellipse 42% 16% at 22% 66%, rgba(110,62,35,0.55) 0%, transparent 75%),
     radial-gradient(ellipse 48% 18% at 80% 70%, rgba(95,52,28,0.5) 0%, transparent 75%),
     linear-gradient(180deg, #cfd9de 0%, #e8dcc3 22%, #dba96b 38%, #c07f47 52%, #9b5e34 66%, #6f3e23 82%, #442615 100%);
+}
+
+.intro-video {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.intro-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.05) 32%, rgba(0, 0, 0, 0.4) 100%);
 }
 
 .section-intro h1 {
