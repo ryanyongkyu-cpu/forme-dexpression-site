@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Forme d'Expression — Spring Summer 26</title>
-<link rel="stylesheet" href="../style.css?v=13">
+<link rel="stylesheet" href="../style.css?v=14">
 </head>
 <body>
 
@@ -29,8 +29,16 @@
 
 <main class="page season-page">
   <div class="season-header">
-    <p class="season-kicker">Lorem ipsum forme d'expression</p>
+    <p class="season-kicker">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+    sed do eiusmod tempor incididunt ut labore. A season built on the
+    quiet tension between softness and structure, drawn from the same
+    restraint that shapes every collection before it.</p>
     <h1>Spring Summer 26</h1>
+
+    <a href="#film-modal" class="film-preview">
+      <img src="../images/seasons/film-thumb.jpg" alt="" class="film-thumb">
+      <span class="film-preview-label">View full film</span>
+    </a>
   </div>
   <div class="season-grid">
     <div class="season-photo"><img src="../images/seasons/bw_standing_tree.jpg" alt=""></div>
@@ -41,6 +49,16 @@
     <div class="season-photo"><img src="../images/seasons/nature_canopy.jpg" alt=""></div>
   </div>
 </main>
+
+<div id="film-modal" class="film-modal">
+  <a href="#" class="film-modal-backdrop" aria-label="Close film"></a>
+  <div class="film-modal-content">
+    <a href="#" class="film-modal-close">Close ✕</a>
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="../videos/intro.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
 
 </body>
 </html>

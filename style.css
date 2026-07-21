@@ -375,9 +375,11 @@ a {
 
 .season-kicker {
   font-size: 13px;
+  line-height: 1.7;
   letter-spacing: 0.02em;
   color: var(--muted);
   margin: 0 0 12px;
+  max-width: 460px;
 }
 
 .season-header h1 {
@@ -386,6 +388,80 @@ a {
   letter-spacing: 0.04em;
   margin: 0;
   text-align: left;
+}
+
+/* Film preview + modal (SS26 page) */
+.film-preview {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.film-thumb {
+  width: 90px;
+  height: auto;
+  display: block;
+  transition: opacity 0.2s ease;
+}
+
+.film-preview:hover .film-thumb {
+  opacity: 0.75;
+}
+
+.film-preview-label {
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 2px;
+}
+
+.film-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  align-items: center;
+  justify-content: center;
+}
+
+.film-modal:target {
+  display: flex;
+}
+
+.film-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 12, 8, 0.88);
+}
+
+.film-modal-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 680px;
+  padding: 0 24px;
+}
+
+.film-modal-content video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.film-modal-close {
+  display: block;
+  text-align: right;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.film-modal-close:hover {
+  opacity: 0.7;
 }
 
 .season-grid {
